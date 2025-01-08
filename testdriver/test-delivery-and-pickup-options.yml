@@ -1,0 +1,36 @@
+version: 4.1.33
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: hover-text
+        text: Olive Garden
+        description: page title in the browser tab
+        action: click
+  - prompt: Click the "Delivery" button.
+    commands:
+      - command: hover-text
+        text: Delivery
+        description: delivery button in the top right of the webpage
+        action: click
+  - prompt: Assert that the delivery options are displayed.
+    commands:
+      - command: assert
+        expect: delivery options are displayed
+  - prompt: Click the "Pickup" button.
+    commands:
+      - command: hover-text
+        text: Pickup
+        description: pickup button in the top right of the webpage
+        action: click
+  - prompt: >-
+      Assert that the pickup options are displayed.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: pickup options are displayed
+  - prompt: >-
+      Assert that the pickup options are displayed.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: pickup options are displayed
