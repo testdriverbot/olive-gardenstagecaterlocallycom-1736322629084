@@ -1,0 +1,22 @@
+version: 4.1.33
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Assert that the "Login" button is visible.
+    commands:
+      - command: assert
+        expect: the "Login" button is visible
+  - prompt: Click the "Login" button.
+    commands:
+      - command: hover-text
+        text: Login
+        description: login button in the top right corner
+        action: click
+  - prompt: >-
+      Assert that the login page loads properly.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: the "Login" text is visible
